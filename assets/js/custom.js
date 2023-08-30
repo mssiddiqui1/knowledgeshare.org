@@ -151,6 +151,52 @@
 	    e.stopPropagation();
 	});
 
+	/* ----------------------------------------------------------- */
+	/*  4. form POPUP
+	/* ----------------------------------------------------------- */
+
+	$('.mu-form-play-btn').on('click', function(event) {
+	   
+        event.preventDefault();
+        
+        $('.mu-form-iframe-area').addClass('mu-form-iframe-display');
+       
+    });
+   
+    // when click the close btn
+
+    // disappear iframe window
+    
+    $('.mu-form-close-btn').on('click', function(event) {
+	    
+	    event.preventDefault();
+	    
+		$('.mu-form-iframe-area').removeClass('mu-form-iframe-display');
+		
+    });
+
+    // stop iframe if it is play while close the iframe window
+
+    $('.mu-form-close-btn').click(function(){
+
+        $('.mu-form-iframe').attr('src', $('.mu-form-iframe').attr('src'));
+
+    });
+
+    // when click overlay area
+
+     $('.mu-form-iframe-area').on('click', function(event) {
+	    
+	    event.preventDefault();
+	    
+		$('.mu-form-iframe-area').removeClass('mu-form-iframe-display');
+		
+    });
+
+	$('.mu-form-iframe-area, .mu-form-iframe').on('click', function(e){
+	    e.stopPropagation();
+	});	
+
 		
 	/* ----------------------------------------------------------- */
 	/*  5. SPEAKERS SLIDEER ( SLICK SLIDER )
